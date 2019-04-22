@@ -15,7 +15,7 @@
 {
     if(self = [super init])
     {
-        //如果对应类实现了class方法，则返回方法中设置的类，如果未实现则沿着继承链中查找class方法的实现，以下两个输出结果都是Man，是因为当前类和父类都没有实现class方法，所以查找继承链中的class方法，NSObject类实现了这个方法，底层中都是找object_getClass(self)返回的类对象isa指针，所以结果一样
+    //如果对应类实现了class方法，则返回方法中设置的类，如果未实现则沿着继承链中查找class方法的实现，以下两个输出结果都是Man，是因为当前类和父类都没有实现class方法，所以查找继承链中的class方法，NSObject类实现了这个方法，底层中都是找object_getClass(self)返回的类对象isa指针，所以结果一样
         NSLog(@"self class----%@",[self class]);
         NSLog(@"super class----%@",[super class]);
         
@@ -51,6 +51,7 @@
         Class cls7 = object_getClass(rootClassObj);
         Class cls8 = [rootClassObj class];
         NSLog(@"cls7 == %p, cls8 == %p", cls7, cls8);
+        
         
         //当类对象调用时，底层中是通过for循环对比object_getClass获得的元类与类对象是否相等而得出结果 0
         NSLog(@"class kind ---- %d",[[Man class] isKindOfClass:[Man class]]);
