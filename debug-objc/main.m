@@ -32,6 +32,20 @@ int main(int argc, const char * argv[]) {
          *
          */
         id __weak m1 = m;
+        NSArray *array1 = @[@{@"key":@"1"}];
+        NSArray *array2 = @[@{@"key":@"1"}];
+        if ([array1 isEqual:array2]) {
+            NSLog(@"array1 isEqual array2");
+        } else if ([array1 isEqualToArray:array2]) {
+            NSLog(@"array1 isEqualToArray array2");
+        } else {
+            NSLog(@"array1 not Equal array2");
+        }
+        NSMutableArray *temp = [[NSMutableArray alloc] initWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8", nil];
+        [temp enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSLog(@"%lu", (unsigned long)idx);
+            [temp removeObjectAtIndex:temp.count-1];
+        }];
     }
     return 0;
 }
