@@ -12,12 +12,10 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         NSString *a = @"hello";
         NSString *b = [NSString stringWithFormat:@"hello"];
-        if (a == b)
-        {
+        if (a == b) {
             NSLog(@"a == b");
         }
-        if ([a isEqualToString:b])
-        {
+        if ([a isEqualToString:b]) {
             NSLog(@"a isEqualToString b");
         }
         Man *m = [[Man alloc] init];
