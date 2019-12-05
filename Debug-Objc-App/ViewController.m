@@ -22,6 +22,8 @@
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
     
+    NSLog(@"--viewDidLoad");
+    
     NSMutableString *abc = [[NSMutableString alloc] initWithString: @"abc"];
     self.cString = abc;
     self.sString = abc;
@@ -35,6 +37,26 @@
     NSLog(@"a__%p__%@",self.aString,self.aString);
     
     NSLog(@"retainCount: %@",[abc valueForKey:@"retainCount"]);
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    NSLog(@"--viewWillAppear");
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    NSLog(@"--viewDidAppear");
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    NSLog(@"--viewWillDisappear");
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    NSLog(@"--viewDidDisappear");
 }
 
 
