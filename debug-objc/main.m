@@ -39,6 +39,7 @@ int main(int argc, const char * argv[]) {
         } else {
             NSLog(@"array1 not Equal array2");
         }
+        NSLog(@"array1--%p, array2--%p", array1, array2);
         NSMutableArray *temp = [[NSMutableArray alloc] initWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8", nil];
         [temp enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             NSLog(@"%lu", (unsigned long)idx);
